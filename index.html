@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{background-color: rgb(244, 248, 9);}
+        h1{color:cadetblue}
+        h2{color: rgb(91, 183, 232);}
+        p{font-family: Verdana;}
+        .main{text-align: center;width: 50%;border: 2px solid black;
+            padding: 20px;margin: 50px auto;}
+    </style>
+    <title>my first page</title>
+</head>
+<body>
+<header>
+    <div id="nav-container"></div>
+</header>
+<script>
+fetch("nav.html")
+.then(res => res.text())
+.then(html => document.getElementById("nav-container").innerHTML = html)
+</script>
+
+    <div class="main">
+    <h1>learning!</h1>
+    <h2>ok</h2>
+    <p>Make difficut things look easy.</p>
+    <img src="fun.jpg" width="400">
+    <br>
+    <br>
+    <a href="https://chat.deepseek.com/a/chat/s/f1eb5323-52ab-49be-8c27-6426068eae3f"target="_blank">Click to visit Bing</a>
+    <br>
+    <button>戳我免费退学</button>
+    <h2>My favorite Quotes</h2>
+    <p>This is my curated selection of proverbs
+        or <a href="quotes.html">quotes</a></p>
+    <blockquote>
+        
+    </blockquote>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotes</title>
+    <style>
+        /* 页面美化CSS */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Hero 顶部大图区域 */
+        .hero {
+            background-color: #e8f4f8;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom:40px;
+        }
+        .hero-quote {
+            font-size: 26px;
+            font-style: italic;
+        }
+        .quote-item {
+            border-bottom:1px solid #ddd;
+            padding:16px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏区域，加载nav.html -->
+    <div id="nav-area"></div>
+
+    <!-- Hero区域：放随机名言 -->
+    <section class="hero">
+        <p class="hero-quote" id="randomQuote"></p>
+    </section>
+
+    <!-- 名言列表 -->
+    <div class="quote-list">
+        <div class="quote-item">“The only way to do great work is to love what you do.” — Steve Jobs</div>
+        <div class="quote-item">“Be the change that you wish to see in the world.” — Gandhi</div>
+        <div class="quote-item">“Stay hungry, stay foolish.” — Steve Jobs</div>
+        <div class="quote-item">“I think, therefore I am.” — Descartes</div>
+        <div class="quote-item">“It does not matter how slowly you go as long as you do not stop.” — Confucius</div>
+        <div class="quote-item">“You miss 100% of the shots you don’t take.” — Wayne Gretzky</div>
+        <div class="quote-item">“The future belongs to those who believe in the beauty of their dreams.” — Eleanor Roosevelt</div>
+        <div class="quote-item">“In the middle of difficulty lies opportunity.” — Albert Einstein</div>
+        <div class="quote-item">“Life is what happens when you're busy making other plans.” — John Lennon</div>
+        <div class="quote-item">“We cannot solve our problems with the same thinking we used when we created them.” — Albert Einstein</div>
+        <div class="quote-item">“No one can make you feel inferior without your consent.” — Eleanor Roosevelt</div>
+        <div class="quote-item">“The best time to plant a tree was 20 years ago. The second best time is now.” — Chinese Proverb</div>
+        <div class="quote-item">“You only live once, but if you do it right, once is enough.” — Mae West</div>
+        <div class="quote-item">“Everything you’ve ever wanted is on the other side of fear.” — George Addair</div>
+        <div class="quote-item">“It always seems impossible until it’s done.” — Nelson Mandela</div>
+    </div>
+
+<script>
+    // 加载导航栏
+    fetch('nav.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('nav-area').innerHTML = html;
+        })
+
+    // 全部名言数组
+    const quotes = [
+        "“The only way to do great work is to love what you do.” — Steve Jobs",
+        "“Be the change that you wish to see in the world.” — Gandhi",
+        "“Stay hungry, stay foolish.” — Steve Jobs",
+        "“I think, therefore I am.” — Descartes",
+        "“It does not matter how slowly you go as long as you do not stop.” — Confucius",
+        "“You miss 100% of the shots you don’t take.” — Wayne Gretzky",
+        "“The future belongs to those who believe in the beauty of their dreams.” — Eleanor Roosevelt",
+        "“In the middle of difficulty lies opportunity.” — Albert Einstein",
+        "“Life is what happens when you're busy making other plans.” — John Lennon",
+        "“We cannot solve our problems with the same thinking we used when we created them.” — Albert Einstein",
+        "“No one can make you feel inferior without your consent.” — Eleanor Roosevelt",
+        "“The best time to plant a tree was 20 years ago. The second best time is now.” — Chinese Proverb",
+        "“You only live once, but if you do it right, once is enough.” — Mae West",
+        "“Everything you’ve ever wanted is on the other side of fear.” — George Addair",
+        "“It always seems impossible until it’s done.” — Nelson Mandela"
+    ];
+    // 随机选一条
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("randomQuote").textContent = quotes[randomIndex];
+</script>
+</body>
+</html>

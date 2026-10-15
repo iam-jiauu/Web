@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul li {
+            padding:8px 0;
+            font-size:18px;
+        }
+        footer {
+            margin-top:40px;
+            padding-top:20px;
+            border-top: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div id="nav-container"></div>
+</header>
+
+<script>
+fetch("nav.html")
+.then(res => res.text())
+.then(html => document.getElementById("nav-container").innerHTML = html)
+</script>
+
+<main>
+    <h1>My Project Ideas</h1>
+    <p>Here are some of my ideas for projects I want to work on.</p>
+    <ul>
+        <li>Build a personal website</li>
+        <li>Create a mobile app</li>
+        <li>Develop a game</li>
+        <li>Write a blog</li>
+        <li>Social Network for Pets</li>
+    </ul>
+</main>
+
+<footer>
+    <p>&copy; 2026 My Project Ideas</p>
+</footer>
+</body>
+</html>
