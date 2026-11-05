@@ -3,37 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        ul li {
-            padding:8px 0;
-            font-size:18px;
-        }
-        footer {
-            margin-top:40px;
-            padding-top:20px;
-            border-top: 1px solid #aaa;
-        }
-    </style>
+      <link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
-<header>
-    <div id="nav-container"></div>
-</header>
 
-<script>
-fetch("nav.html")
-.then(res => res.text())
-.then(html => document.getElementById("nav-container").innerHTML = html)
-</script>
+<header id="site-header"></header>
 
 <main>
     <h1>My Project Ideas</h1>
@@ -50,5 +26,6 @@ fetch("nav.html")
 <footer>
     <p>&copy; 2026 My Project Ideas</p>
 </footer>
+  <script src="nav.js"></script>
 </body>
 </html>

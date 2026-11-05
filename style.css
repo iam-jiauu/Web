@@ -1,0 +1,66 @@
+
+
+
+
+
+body {
+            font-family: Arial, sans-serif;
+        
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(244, 248, 9);
+        }
+        /* Hero 顶部大图区域 */
+
+        main {
+            padding:100px;
+        }
+
+ .hero {
+            background-color: #e8f4f8;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom:40px;
+        }
+
+
+
+        .hero img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius:10px;
+}
+
+
+        .hero-quote {
+            font-size: 26px;
+            font-style: italic;
+        }
+        .quote-item {
+            border-bottom:1px solid #ddd;
+            padding:16px 0;
+        }
+
+    
+        footer {
+            margin-top:40px;
+            padding-top:20px;
+            border-top: 1px solid #aaa;
+        }
+
+nav {
+  display: flex;
+  align-items: center;      /* vertically centred */
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+nav .links {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 auto;           /* pushes it to the centre */
+  list-style: none;         /* no bullets */
+  padding: 0;
+}

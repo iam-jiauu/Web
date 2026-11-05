@@ -3,33 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Quotes</title>
-    <style>
-        /* 页面美化CSS */
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Hero 顶部大图区域 */
-        .hero {
-            background-color: #e8f4f8;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 12px;
-            margin-bottom:40px;
-        }
-        .hero-quote {
-            font-size: 26px;
-            font-style: italic;
-        }
-        .quote-item {
-            border-bottom:1px solid #ddd;
-            padding:16px 0;
-        }
-    </style>
+      <link rel="stylesheet" href="style.css">
+
+    
 </head>
 <body>
+    <header id="site-header"></header>
+
     <!-- 导航栏区域，加载nav.html -->
     <div id="nav-area"></div>
 
@@ -59,11 +39,7 @@
 
 <script>
     // 加载导航栏
-    fetch('nav.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('nav-area').innerHTML = html;
-        })
+  
 
     // 全部名言数组
     const quotes = [
@@ -87,5 +63,6 @@
     const randomIndex = Math.floor(Math.random() * quotes.length);
     document.getElementById("randomQuote").textContent = quotes[randomIndex];
 </script>
+  <script src="nav.js"></script>
 </body>
 </html>

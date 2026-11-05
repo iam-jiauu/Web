@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.game-box{
+  max-width:420px;
+  margin:40px;
+  padding:24px;
+  border:1px solid #aaa;
+  border-radius:12px;
+  font-family:system-ui, sans-serif;
+}
+.game-box button{
+  padding:7px 12px;
+  margin:4px;
+  cursor:pointer;
+}
+#tip{
+  font-size:18px;
+  margin:10px 0;
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Li Wei</a>
+  <ul class="links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="quotes.html">Quotes</a></li>
+    <li><a href="project.html">Project ideas</a></li>
+    <li><a href="machine.html">Machine</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="action" href="about.html#contact">Contact</a>
+</nav>
+
+<main style="padding:3rem;">
+  <div class="game-box">
+    <h3>🤖 Guessing Game</h3>
+    <p>The machine picks a number from 1 to 100. It’s your turn to guess!</p>
+    <div id="tip">Enter your guess below</div>
+    <input type="number" id="userInput" placeholder="Type number" min="1" max="100">
+    <button onclick="checkGuess()">Submit</button>
+    <p>Guess count: <span id="cnt">0</span></p>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+</main>
+
+<script>
+let target = Math.floor(Math.random() * 100) + 1;
+let count = 0;
+
+function checkGuess(){
+  const val = document.getElementById("userInput").value;
+  const tipDom = document.getElementById("tip");
+  const countDom = document.getElementById("cnt");
+  let num = Number(val);
+
+  if(!val || isNaN(num)){
+    tipDom.innerText = "⚠️ Please enter a valid integer!";
+    return;
+  }
+  count++;
+  countDom.innerText = count;
+
+  if(num < target){
+    tipDom.innerText = "📈 Too small! Try a bigger number.";
+  }else if(num > target){
+    tipDom.innerText = "📉 Too big! Try a smaller number.";
+  }else{
+    tipDom.innerText = `🎉 Correct! The number is ${target}.`;
+  }
+  document.getElementById("userInput").value = "";
+}
+
+function restartGame(){
+  target = Math.floor(Math.random() * 100) + 1;
+  count = 0;
+  document.getElementById("tip").innerText = "Enter your guess below";
+  document.getElementById("cnt").innerText = "0";
+  document.getElementById("userInput").value = "";
+}
+</script>
+</body>
+</html>
