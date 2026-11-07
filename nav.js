@@ -6,7 +6,9 @@ function inject(file, targetId) {
   const target = document.getElementById(targetId);
   if (!target) return; // 这个页面没有对应的占位容器，安静跳过
 
-  fetch(file)
+  // cache: 'no-store' —— 绕过浏览器/GitHub Pages 的 10 分钟缓存，
+  // 否则改完 nav.html 后页面上还会显示旧内容
+  fetch(file, { cache: 'no-store' })
     .then(function (res) {
       if (!res.ok) throw new Error(file + ' 加载失败：HTTP ' + res.status);
       return res.text();
