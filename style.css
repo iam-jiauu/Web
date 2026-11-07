@@ -43,6 +43,20 @@ body {
             padding:16px 0;
         }
 
+.contact-box {
+            margin-top: 48px;
+            padding: 24px;
+            max-width: 560px;
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 12px;
+        }
+
+.footer-links {
+            margin: 8px 0 0;
+            font-size: 14px;
+        }
+
     
         footer {
             margin-top:40px;
